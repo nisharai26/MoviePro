@@ -1,0 +1,20 @@
+<h1>Movie</h1>
+<form action="/movie" method="post">
+Name:<input type="text" name = "name">
+Genre:<input type="text" name = "genre">
+Year:<input type="date" name = "releaseYear">
+
+<input type="submit" value="Submit">
+</form>
+{{#if err}}
+<h2>{{err}}</h2>
+{{/if}}
+{{#each movies}}
+<ul>
+{{log this}}
+    <li>Name:{{this.name}}</li>
+     
+      <li>releaseYear:{{this.releaseYear}}</li>
+     <li>Genre:{{this.genre}}</li>
+</ul>
+{{/each}}
